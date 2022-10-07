@@ -1,0 +1,53 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 2px;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border: 2px solid blue;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 16px;
+    background-color: aliceblue;
+}
+
+.button{
+    background-color: blue;
+    border-radius: 4px;
+    border: 2px solid blue;
+    cursor: pointer;
+    color: white;
+    padding: 4px 8px;
+    margin: 4px;
+    transition: all 0.5s;
+}
+
+.button:hover{
+    color: blue;
+    background-color: white;
+}
+
+.barcodes{
+    margin: 8px;
+    padding: 4px;
+}

@@ -1,0 +1,89 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.barcode{
+    display: grid;
+    grid-template-areas: 'input input copy barcode barcode barcode barcode close' 'button button . barcode barcode barcode barcode .';
+    overflow: auto;
+    border-radius: 4px;
+    background-color: aliceblue;
+    margin: 4px;
+    padding: 4px;
+}
+
+#barcode-copy{
+    margin: 0px 2px;
+    grid-area: copy;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 4px;
+    transition: all 0.5s;
+    width: 100px;
+    height: 50px;
+    font-size: 32px;
+}
+
+#barcode-copy{
+    cursor: pointer;
+}
+
+#barcode-copy:active{
+    color: aliceblue;
+    border: 2px dashed black;
+}
+
+#barcode-data{
+    grid-area: input;
+    padding: 4px;
+    border: 2px solid blue;
+    border-radius: 4px;
+    height: 50px;
+    color: blue;
+    outline: none;
+    font-size: 32px;
+    caret-color: blue;
+}
+
+#barcode-data:focus{
+    border: 2px solid burlywood;
+}
+
+#barcode-button{
+    grid-area: button;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    border: none;
+    font-size: 24px;
+    color: blue;
+    background-color: rgb(213, 235, 255);
+    border-radius: 4px;
+    box-shadow: 0px 0px 6px rgb(214, 214, 214);
+    transition: box-shadow 0.5s;
+}
+
+#barcode-button:active{
+    color: rgba(0, 0, 255, 0.466);
+    box-shadow: 0px 0px 2px rgb(214, 214, 214) inset;
+}
+
+#barcode-image{
+    grid-area: barcode;
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
+#barcode-close{
+    cursor: pointer;
+    justify-self: end;
+}
