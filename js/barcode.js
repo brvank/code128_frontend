@@ -1,4 +1,4 @@
-export function barcodeView(data){
+export function barcodeView(data, baseUrl){
     //create parent element
     var newView = document.createElement("div");
     newView.setAttribute("class", "barcode");
@@ -17,7 +17,8 @@ export function barcodeView(data){
     //create barcode image
     var barcodeImageView = document.createElement("img");
     barcodeImageView.setAttribute("id", "barcode-image");
-    barcodeImageView.setAttribute("src", "http://localhost:8080/barcode/code128.png?data=");
+    barcodeImageView.setAttribute("alt", "barcode");
+    barcodeImageView.setAttribute("src", baseUrl + "/barcode/code128.png?data=");
 
     //adding button
     var buttonView = document.createElement("button");
@@ -27,6 +28,7 @@ export function barcodeView(data){
     //create close view
     var closeView = document.createElement("img");
     closeView.setAttribute("id", "barcode-close");
+    closeView.setAttribute("alt", "close");
     closeView.setAttribute("src", "../res/close-icon.png");
     closeView.setAttribute("height", "20px");
     closeView.setAttribute("width", "20px");
@@ -38,15 +40,19 @@ export function barcodeView(data){
 
 
     buttonView.addEventListener("click", ()=>{
-        barcodeImageView.src = "http://localhost:8080/barcode/code128.png?data=" + inputView.value;
+        barcodeImageView.src = baseUrl + "/barcode/code128.png?data=" + inputView.value;
     });
 
 
     closeView.addEventListener("click", ()=>{
-        newView.remove();
+        newView.classList.replace("add", "remove");
+        newView.style.overflow = "hidden";
+        setTimeout(function(){
+            newView.remove();
+        }, 500);
     });
 
-    inputView.addEventListener("keydown", (e)=>{
+    inputView.addEventListener("keypress", (e)=>{
         if(e.key == 'Enter'){
             buttonView.click();
         }
@@ -58,6 +64,9 @@ export function barcodeView(data){
     newView.appendChild(barcodeImageView);
     newView.appendChild(buttonView);
     newView.appendChild(closeView);
+
+    //add animation class
+    newView.classList.add("add");
 
     return newView;
 }

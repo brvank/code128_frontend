@@ -13,22 +13,26 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 8px;
     border: 2px solid blue;
     border-radius: 8px;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 24px;
 }
 
-.header{
+.options{
     position: sticky;
     top: 0;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 16px;
-    background-color: aliceblue;
+    justify-content: flex-start;
+    padding: 8px 0px;
+    margin-top: 4px;
+    border-radius: 8px;
+    border: 2px solid rgb(120, 120,120);
+    background-color: rgb(255, 255, 255);
 }
 
 .button{
@@ -38,8 +42,13 @@ body{
     cursor: pointer;
     color: white;
     padding: 4px 8px;
-    margin: 4px;
+    margin: auto 4px;
     transition: all 0.5s;
+    font-size: 16px;
+}
+
+#clearAll:hover{
+    color: red;
 }
 
 .button:hover{
@@ -47,7 +56,10 @@ body{
     background-color: white;
 }
 
+.button:active{
+    border: 2px solid black;
+}
+
 .barcodes{
-    margin: 8px;
-    padding: 4px;
+    margin: 4px;
 }

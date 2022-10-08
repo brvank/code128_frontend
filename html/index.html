@@ -6,35 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/index.css" rel="stylesheet">
     <link href="../css/barcode.css" rel="stylesheet">
+    <link href="../css/barcodeGroup.css" rel="stylesheet">
+    <link href="../css/nameModal.css" rel="stylesheet">
     <title>Code 128</title>
 </head>
 <body>
+
+    <div class="nameModal">
+        <div class="container">
+            <p id="tag">Barcode Group Name?</p>
+            <input type="text" id="newGroupName">
+            <button class="newGroupButton" id="newGroupCancel">Cancel</button>
+            <button class="newGroupButton" id="newGroupAdd">Add</button>
+        </div>
+    </div>
     
     <div class="title">Code 128</div>
 
-    <div class="header">
+    <div class="options">
         <div class="button" id="add">
-            ADD
+            Add
         </div>
 
-        <!-- <div class="button" id="report">
-            Report
+        <div class="button" id="addGroup">
+            Add Group
         </div>
 
-        <div class="button" id="about">
-            About
-        </div> -->
+        <div class="button" id="clearAll">
+            Clear All
+        </div>
     </div>
 
-    <div class="barcodes">
-        <!-- <div class="barcode">
-            <input id="barcode-data" type="text">
-            <div id="barcode-copy">Copy</div>
-            <button id="barcode-button" onclick="">Create Barcode</button>
-            <img id="barcode-image" src="http://localhost:8080/barcode/code128.png?data=hi" width="auto" height="200px">
-            <img id="barcode-close" src="../res/close-icon.png" width="20px" height="20px">
-        </div> -->
-    </div>
+    <div class="barcodes"></div>
 
     <script type="module" src="../js/index.js">
     </script>

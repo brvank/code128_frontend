@@ -8,15 +8,16 @@
 .barcode{
     display: grid;
     grid-template-areas: 'input input copy barcode barcode barcode barcode close' 'button button . barcode barcode barcode barcode .';
-    overflow: auto;
-    border-radius: 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 8px;
     background-color: aliceblue;
     margin: 4px;
-    padding: 4px;
+    max-height: 300px;
 }
 
 #barcode-copy{
-    margin: 0px 2px;
+    margin: 4px 2px;
     grid-area: copy;
     display: flex;
     align-items: center;
@@ -28,11 +29,11 @@
     border-radius: 4px;
     transition: all 0.5s;
     width: 100px;
-    height: 50px;
-    font-size: 32px;
+    height: 32px;
+    font-size: 16px;
 }
 
-#barcode-copy{
+#barcode-copy:hover{
     cursor: pointer;
 }
 
@@ -43,13 +44,14 @@
 
 #barcode-data{
     grid-area: input;
+    margin: 4px;
     padding: 4px;
     border: 2px solid blue;
     border-radius: 4px;
-    height: 50px;
+    height: 32px;
     color: blue;
     outline: none;
-    font-size: 32px;
+    font-size: 16px;
     caret-color: blue;
 }
 
@@ -60,15 +62,16 @@
 #barcode-button{
     grid-area: button;
     width: 200px;
-    height: 50px;
+    height: 32px;
     margin: auto;
     border: none;
-    font-size: 24px;
+    font-size: 16px;
     color: blue;
     background-color: rgb(213, 235, 255);
     border-radius: 4px;
     box-shadow: 0px 0px 6px rgb(214, 214, 214);
     transition: box-shadow 0.5s;
+    cursor: pointer;
 }
 
 #barcode-button:active{
@@ -80,10 +83,37 @@
     grid-area: barcode;
     width: auto;
     height: auto;
-    margin: auto;
+    margin: 4px auto;
 }
 
 #barcode-close{
     cursor: pointer;
+    margin: 4px;
+    height: 16px;
+    width: 16px;
     justify-self: end;
+}
+
+.add{
+    animation-name: add;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.remove{
+    animation-name: remove;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;    
+}
+
+@keyframes add {
+    from{max-height: 0px;}
+    to{max-height: 300px;}
+}
+
+@keyframes remove {
+    from{max-height: 300px;}
+    to{max-height: 0px;}
 }

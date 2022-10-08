@@ -1,0 +1,101 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.nameModal{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0,0,0,0.4);
+    overflow: auto;
+}
+
+.container{
+    margin: auto;
+    padding: 16px;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-areas: 'text text' 'input input' 'cancel create';
+    border: 2px solid blue;
+    border-radius: 16px;
+}
+
+#tag{
+    grid-area: text;
+    margin: 4px;
+    padding: 4px;
+    color: black;
+    font-weight: bold;
+}
+
+#newGroupName{
+    grid-area: input;
+    margin: 4px;
+    padding: 4px;
+    border: 2px solid blue;
+    border-radius: 4px;
+    height: 32px;
+    color: blue;
+    outline: none;
+    caret-color: blue;
+}
+
+.newGroupButton{
+    height: 32px;
+    width: 200px;
+    height: 32px;
+    margin: 4px;
+    border: none;
+    font-size: 16px;
+    color: blue;
+    background-color: rgb(213, 235, 255);
+    border-radius: 4px;
+    box-shadow: 0px 0px 6px rgb(214, 214, 214);
+    transition: box-shadow 0.5s;
+    cursor: pointer;
+}
+
+.newGroupButton:active{
+    color: rgba(0, 0, 255, 0.466);
+    box-shadow: 0px 0px 2px rgb(214, 214, 214) inset;
+}
+
+#newGroupAdd{
+    grid-area: create;
+}
+
+#newGroupCancel{
+    grid-area: cancel;
+}
+
+.enter{
+    animation-name: enterAnimation;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.exit{
+    animation-name: exitAnimation;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes enterAnimation {
+    from{transform: translateY(-1000px);}
+    to{transform: translateY(0px);}
+}
+
+@keyframes exitAnimation {
+    from{transform: translateY(0px);}
+    to{transform: translateY(-1000px);}
+}

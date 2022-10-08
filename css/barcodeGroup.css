@@ -1,0 +1,62 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.barcodeGroup{
+    margin: 4px;
+    overflow: auto;
+    border: 2px solid antiquewhite;
+    background-color: antiquewhite;
+    border-radius: 8px;
+}
+
+.groupOptions{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+#groupName{
+    flex-grow: 1;
+    margin: 4px;
+    background-color: antiquewhite;
+    outline: none;
+    height: 32px;
+    border: none;
+    caret-color: burlywood;
+    color: burlywood;
+}
+
+#addBarcode{
+    flex-grow: 0;
+    margin: 4px;
+    height: 32px;
+    width: 32px;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+#closeView{
+    flex-grow: 0;
+    margin: 4px;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+}
+
+#showHide{
+    flex-grow: 0;
+    margin: 4px;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    transition: all 0.5s;
+}
