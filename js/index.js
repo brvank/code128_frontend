@@ -7,7 +7,8 @@ const containerOfModal = document.querySelector(".container");
 const newGroupNameText = document.querySelector("#newGroupName");
 const newGroupAddButton = document.querySelector("#newGroupAdd");
 const newGroupCancelButton = document.querySelector("#newGroupCancel");
-const baseUrl = "http://localhost:8081";
+const reportButton = document.querySelector(".report");
+const baseUrl = "https://code128.herokuapp.com";
 
 var addView = function (data){
     barcodes.appendChild(barcodeView(data, baseUrl));
@@ -21,6 +22,7 @@ var showNameModal = function(){
     containerOfModal.classList.remove("exit");
     containerOfModal.classList.add("enter");
     nameModal.style.display = "flex";
+    newGroupNameText.focus();
 }
 
 var hideNameModal = function(){
@@ -43,11 +45,7 @@ addGroupButton.addEventListener("click", ()=>{
 
 var clearAllButton = document.querySelector("#clearAll");
 clearAllButton.addEventListener("click", ()=>{
-    var length = barcodes.childNodes.length;
-    for(var i = 0;i<length;i++){
-        var closeButton = barcodes.childNodes[i].querySelector("#barcode-close");
-        closeButton.click();
-    }
+    barcodes.innerHTML = '';
 });
 
 newGroupNameText.addEventListener("keypress", (e)=>{
@@ -66,6 +64,10 @@ newGroupCancelButton.addEventListener("click", ()=>{
     hideNameModal();
 });
 
+reportButton.addEventListener("click", ()=>{
+    window.location.href = "mailto:mauryaankit482@gmail.com?subject=Bug%20Found%20in%20Code128&body=Hi Ankit";
+});
+
 window.addEventListener("click", (e)=>{
     if(e.target == nameModal){
         hideNameModal();
@@ -76,4 +78,4 @@ window.addEventListener("keydown", (e)=>{
     if(e.key == 'Escape'){
         hideNameModal();
     }
-})
+});
